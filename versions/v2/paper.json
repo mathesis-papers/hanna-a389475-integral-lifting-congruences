@@ -1,0 +1,66 @@
+{
+  "files": {
+    "pdf": {
+      "bytes": 99516,
+      "matches_public": true,
+      "path": "paper.pdf",
+      "public_sha256": "59779e555e6460616b9f47276dc49a20ffc34408989400c2cc7984c6b380aab7",
+      "sha256": "59779e555e6460616b9f47276dc49a20ffc34408989400c2cc7984c6b380aab7"
+    },
+    "source": {
+      "bytes": 18696,
+      "matches_public": true,
+      "path": "source.archive",
+      "public_sha256": "b49049ee805d91a564b6010ae1553d72a33df546fdb1b63fa4e054b848f8cbe2",
+      "sha256": "b49049ee805d91a564b6010ae1553d72a33df546fdb1b63fa4e054b848f8cbe2"
+    }
+  },
+  "source_identity": "Mathesis public projection",
+  "work": {
+    "abstract_text": "For Hanna's OEIS A389475, Formulas (4.a)–(4.b), we give integral lifting proofs and parameter extensions, together with alternative proofs of the A389472 congruences proved by Perez Fontelles (2026) and Dong (2026). The normalized rational series satisfying A(3x^2)=2x^2+A(x)^2−2A(x)^3 has integral coefficients and satisfies A(x)^3≡A(x^3) and A(x)^2≡x^2+2A(x^3) modulo three. A coefficient recursion with diagonal −2 has even numerators by characteristic-two Frobenius. The same lifting proves A389474, Formulas (3)–(4), including B(x)^2≡x^2+2x^3 modulo nine. Binomial descent reproves both A389472 congruences. An integral product links A389472 to A350432, classifies the free second coefficient, and proves the stated golden-ratio convergence radius.",
+    "authors": [
+      {
+        "affiliation": "ChronoAI Pte Ltd, Singapore",
+        "name": "Haobo Ma"
+      },
+      {
+        "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+        "name": "Wenlin Zhang"
+      }
+    ],
+    "concept_doi": null,
+    "current_version": 2,
+    "doi": null,
+    "lean_source": {
+      "revision": "074df09ddbbef1843ddb383577bfaa827f753e36",
+      "url": "https://github.com/the-omega-institute/trureturing/blob/074df09ddbbef1843ddb383577bfaa827f753e36/D5/S1/Recurrence/Invariants/HannaTripleSquareFrobeniusModThree.lean"
+    },
+    "license": "CC-BY-4.0",
+    "msc": [],
+    "pdf": {
+      "bytes": 99516,
+      "sha256": "59779e555e6460616b9f47276dc49a20ffc34408989400c2cc7984c6b380aab7",
+      "url": "/api/v1/collected-papers/hanna-a389475-integral-lifting-congruences/files/pdf?version=2"
+    },
+    "previous_version": null,
+    "publication": "public",
+    "published_on": "2026-11-23T01:43:15.243850406Z",
+    "record": "hanna-a389475-integral-lifting-congruences",
+    "repository_name": "hanna-a389475-integral-lifting-congruences",
+    "source": {
+      "bytes": 18696,
+      "sha256": "b49049ee805d91a564b6010ae1553d72a33df546fdb1b63fa4e054b848f8cbe2",
+      "url": "/api/v1/collected-papers/hanna-a389475-integral-lifting-congruences/files/source?version=2"
+    },
+    "title": "Integral lifting and extensions for Hanna's OEIS A389475, Formulas (4.a)–(4.b): complements to Perez Fontelles (2026) and Dong (2026)",
+    "versions": [
+      {
+        "previous_version": null,
+        "published_on": "2026-11-23T01:43:15.243850406Z",
+        "revision": "2",
+        "version": 2
+      }
+    ],
+    "work": "hanna-a389475-integral-lifting-congruences"
+  }
+}

@@ -1,0 +1,535 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=25mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,booktabs,longtable}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue]{hyperref}
+\setlength{\emergencystretch}{1em}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\Fp}{\mathbb F}
+\newcommand{\coef}[2]{[x^{#1}]#2}
+\title{Integral lifting and extensions for Hanna's\\
+OEIS A389475, Formulas (4.a)--(4.b):\\
+complements to Perez Fontelles (2026) and Dong (2026)}
+\author{Haobo Ma\\\small ChronoAI Pte Ltd, Singapore
+\and Wenlin Zhang\\\small National University of Singapore\\\small ChronoAI Pte Ltd, Singapore}
+\date{November 11, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+For Hanna's OEIS A389475, Formulas (4.a)--(4.b), we give integral
+lifting proofs and parameter extensions, together with alternative proofs
+of the A389472 congruences proved by Perez Fontelles (2026) and Dong (2026).
+The normalized rational series satisfying
+$A(3x^2)=2x^2+A(x)^2-2A(x)^3$ has integral coefficients and satisfies
+$A(x)^3\equiv A(x^3)$ and $A(x)^2\equiv x^2+2A(x^3)$ modulo three.
+The key step is a coefficient recursion with diagonal $-2$ whose numerators
+are even by the characteristic-two Frobenius identity.
+The same lifting proves the integrality needed for A389474, Formulas
+(3)--(4), including $B(x)^2\equiv x^2+2x^3\pmod9$.
+A binomial-coefficient descent reproves the two A389472 congruences.
+An integral product links A389472 to A350432, classifies the free second
+coefficient, and proves the stated golden-ratio convergence radius.
+\end{abstract}
+
+\section{The statements and their normalizations}
+
+Hanna's A389475, Formulas (4.a)--(4.b) \cite{hanna475}, state the
+conjectures ``A(x)\^{}3 == A(x\^{}3) (mod 3)'' and
+``A(x)\^{}2 == x\^{}2 + 2*A(x\^{}3) (mod 3).''
+We write $[x^n]f$ for the coefficient of $x^n$ in $f$ and $\Fp_p$
+for the field of $p$ elements. The rings $\Z[[x]]$ and $\Q[[x]]$
+are the integer and rational formal power-series rings. Congruence modulo
+an integer means that the difference belongs to that integer times $\Z[[x]]$.
+
+We distinguish the series from the two entries by writing
+\begin{align}
+ A(3x^2)&=2x^2+A(x)^2-2A(x)^3, & A&=x+O(x^2), \label{eq:A}\\
+ B\bigl(x^2+2x^3+2B(x)^2\bigr)&=3B(x)^2, & B&=x+O(x^2).
+ \label{eq:B}
+\end{align}
+The second equation is A389474, Formula (1) \cite{hanna474}.
+All substitutions are formal, with inner series of constant coefficient zero.
+Here $O(x^d)$ denotes an element of $x^d\Q[[x]]$.
+
+\begin{theorem}\label{thm:main}
+Each of \eqref{eq:A} and \eqref{eq:B} has exactly one solution in
+$x+x^2\Q[[x]]$, and both solutions belong to $\Z[[x]]$.
+They satisfy
+\begin{align}
+ A(x)^3&\equiv A(x^3)\pmod3, \label{eq:4a}\\
+ A(x)^2&\equiv x^2+2A(x^3)\pmod3, \label{eq:4b}\\
+ B(x)^2&\equiv x^2+2x^3\pmod9. \label{eq:mod9}
+\end{align}
+Moreover, for every $f\in\Z[[x]]$ and every integer $k\geq0$,
+\begin{equation}\label{eq:allpowers}
+ f(x)^{3k}\equiv f(x^3)^k\pmod3.
+\end{equation}
+In particular, \eqref{eq:mod9} proves A389474, Formula (3), at every
+degree $n>3$, and \eqref{eq:allpowers} with $f=B$ proves its Formula (4)
+for all $n,k\geq1$.
+\end{theorem}
+
+\section{Integral lifting}
+
+For a normalized series $f=x+O(x^2)$ put
+\begin{align*}
+ E_A(f)&=f(3x^2)-2x^2-f^2+2f^3,\\
+ H_f&=x^2+2x^3+2f^2, & E_B(f)&=f(H_f)-3f^2.
+\end{align*}
+
+\begin{lemma}\label{lem:lift}
+For either residual $E\in\{E_A,E_B\}$, the equation $E(f)=0$ has a
+unique normalized rational solution, and that solution is integral.
+\end{lemma}
+\begin{proof}
+Both $E_A(x)$ and $E_B(x)$ equal $2x^3$, so the coefficients in degrees
+zero, one and two vanish at the initial approximation $f=x$.
+For $n\geq2$, a normalized series $f$, and a rational number $t$, we have
+\begin{equation}\label{eq:diagonal}
+ E(f+t x^n)=E(f)-2t x^{n+1}+O(x^{n+2}).
+\end{equation}
+For $E_A$, the substitution term changes first in degree $2n\geq n+2$,
+the square changes by $2t x^{n+1}+O(x^{n+2})$, and the cube changes
+first in degree $n+2$.
+For $E_B$, the inner series changes by
+$4t x^{n+1}+O(x^{n+2})$. Its contribution through the outer series
+is the same to this precision, since $f=x+O(x^2)$ and $H_f=O(x^2)$.
+Changing the outer series contributes $tH_f^n+O(x^{n+2})$, which has
+order at least $2n$. The term $-3f^2$ contributes $-6t x^{n+1}$.
+Their sum is again $-2t x^{n+1}$.
+The same order estimates show that terms of $f$ in degrees greater than
+$n$ do not affect coefficients of $E(f)$ through degree $n+1$.
+
+Suppose an integral truncation $f_{n-1}=x+O(x^2)$, of degree less than
+$n$, satisfies $E(f_{n-1})=O(x^{n+1})$.
+Let $r_n=\coef{n+1}{E(f_{n-1})}$. Reducing an arbitrary integral
+normalized $f$ modulo two gives, for both residuals,
+\[
+ E(f)\equiv f(x^2)-f(x)^2=0\quad\hbox{in }\Fp_2[[x]].
+\]
+The last equality follows by squaring each finite truncation in
+characteristic two. Thus $r_n$ is even. Set $a_n=r_n/2$ and
+$f_n=f_{n-1}+a_nx^n$. Equation \eqref{eq:diagonal} gives
+$E(f_n)=O(x^{n+2})$. Induction constructs an integral series whose every
+residual coefficient is zero. Since the diagonal $-2$ is nonzero over
+$\Q$, the same recursion uniquely determines every coefficient of any
+normalized rational solution. This proves both existence and uniqueness.
+\end{proof}
+
+\paragraph{An integral family.}
+The identical argument for $E_A$ applies to
+\begin{equation}\label{eq:family}
+ f(qx^2)=(q-1)x^2+f(x)^2+c f(x)^3,
+ \qquad q\in2\Z+1,\quad c\in2\Z.
+\end{equation}
+Indeed its residual has the same diagonal, vanishes below degree three
+at $f=x$, and reduces to $f(x^2)-f^2$ modulo two.
+It therefore has a unique normalized rational solution, with integral
+coefficients. Taking $(q,c)=(1,-2)$ gives the defining series of
+Hanna's A273095 \cite{hanna095}.
+
+\begin{corollary}[A square-modulus family]\label{cor:parameter}
+Let $q$ be odd, let $c$ be even, and let $f$ be the normalized solution
+of \eqref{eq:family}. Its compositional inverse $g$ is integral and satisfies
+\[
+ g\bigl(x^2+cx^3+(q-1)g(x)^2\bigr)=qg(x)^2,
+ \qquad g(x)^2\equiv x^2+cx^3\pmod{q^2}.
+\]
+For $c=2$ the coefficient of $x^4$ in the difference is exactly $q^2$.
+\end{corollary}
+\begin{proof}
+The inverse is integral because the coefficient of $x^n$ in $f(g)=x$
+is $[x^n]g$ plus an integer expression in earlier coefficients.
+Substitute $x=g(y)$ in \eqref{eq:family} and apply $g$ to obtain the
+displayed equation. Put $H=x^2+cx^3+(q-1)g^2$ and write
+$g=x+x^2Q$, with $Q\in\Z[[x]]$. Then
+$H(1+HQ(H))=qg^2$, so $H\in q\Z[[x]]$ because the parenthesis
+is an integral unit. Thus
+$g^2-x^2-cx^3=qg^2-H=H^2Q(H)\in q^2\Z[[x]]$.
+Here $[x^2]H=q$ and $Q(0)=c/2$, giving coefficient $q^2c/2$
+in degree four. This proves the last assertion as well.
+\end{proof}
+
+This family is not posed in the cited entries. Its $(q,c)=(3,2)$
+case is A389474, including its exceptional degrees two and three.
+
+\begin{corollary}[Prime-degree and signed siblings]\label{cor:prime}
+For any prime $p$, integers $q\equiv1\pmod p$ and $c\equiv0\pmod p$,
+the equation
+\[
+ f(qx^p)=(q-1)x^p+f^p+cf^{p+1},\qquad f=x+O(x^2),
+\]
+has a unique rational solution and it is integral.
+In addition, both equations
+$\sigma f(\sigma x^2)=f^2-2f^3$ for $\sigma\in\{1,-1\}$
+have unique normalized integral solutions.
+\end{corollary}
+\begin{proof}
+In the first residual, changing $[x^n]f$ by $t$, for $n\geq2$,
+changes its coefficient of degree $n+p-1$ by $-pt$ and leaves
+earlier coefficients fixed. The substituted term first changes in degree
+$pn\geq n+p$ and $f^{p+1}$ first changes in degree $n+p$.
+The residual vanishes modulo $p$ by Frobenius. The lifting argument
+of Lemma~\ref{lem:lift}, dividing each numerator by $p$, therefore applies.
+The initial residual at $f=x$ vanishes through degree $p$.
+For the signed equations the diagonal is $-2$ in degree $n+1$ and the
+residual is again $f(x^2)-f^2$ modulo two, so the same induction applies.
+\end{proof}
+
+The case $(p,q,c)=(3,1,-3)$ is A274396; the signed case $\sigma=-1$
+is A273320 \cite{primeentries}. Their inverse formulas follow by
+substitution. More explicitly, for A274396 put $P(y)=y^3-3y^4$
+and let $J=f^{-1}$. Then $J(P(y))=J(y)^3$, whence
+$f(J(y)^{3^j})=P^{\circ j}(y)$ for every $j\geq0$.
+For A273320, $-f(-J(y)^2)=y^2-2y^3$ and
+$J(2y^3-y^2)=-J(y)^2$, exactly its displayed identities.
+
+\section{Congruences and the exceptional low degrees}
+
+For a prime $p$ and $f\in\Z[[x]]$, reduce coefficients to $\Fp_p$.
+The Frobenius endomorphism in characteristic $p$ \cite{stacks} gives
+the required identity; we include the coefficient argument.
+For every truncation the binomial theorem in characteristic $p$ gives
+$(\sum a_jx^j)^p=\sum a_j^p x^{pj}=\sum a_jx^{pj}$.
+Each coefficient uses only finitely many terms, so
+$f(x)^p\equiv f(x^p)\pmod p$. Taking $p=3$ and raising to the $k$th
+power proves \eqref{eq:allpowers}, including $k=0$.
+Lemma~\ref{lem:lift} applies this to $A$ and proves \eqref{eq:4a}.
+Since $A(0)=0$, the left side of \eqref{eq:A} vanishes modulo three.
+Consequently $A^2\equiv x^2+2A^3\equiv x^2+2A(x^3)\pmod3$,
+which proves \eqref{eq:4b}.
+
+For \eqref{eq:mod9}, write $B=x+x^2Q$ with $Q\in\Z[[x]]$ and set
+$H=x^2+2x^3+2B^2$. Equation \eqref{eq:B} becomes
+\begin{equation}\label{eq:unit}
+ H\bigl(1+H Q(H)\bigr)=3B^2.
+\end{equation}
+The series $U=1+H Q(H)$ has constant coefficient one, so its inverse
+$\sum_{j\geq0}(-H Q(H))^j$ is integral. Hence
+$H=3B^2U^{-1}\in3\Z[[x]]$. Also, \eqref{eq:unit} gives
+\[
+ B^2-x^2-2x^3=3B^2-H=H^2Q(H)\in9\Z[[x]],
+\]
+as required. This completes the proof of Theorem~\ref{thm:main}.
+
+The exceptional terms in \eqref{eq:mod9} are necessary:
+$\coef2{B^2}=1$ and $\coef3{B^2}=2$.
+The first terms are
+\begin{align*}
+ A&=x+x^2+7x^3+17x^4+147x^5+O(x^6),\\
+ B&=x+x^2+4x^3+14x^4+104x^5+O(x^6).
+\end{align*}
+Thus $\coef4{B^2}=9$, $\coef4{(A^3-A(x^3))}=3$, and
+$\coef4{(A^2-x^2-2A(x^3))}=15$.
+These exact coefficients rule out, respectively, replacing nine by
+twenty-seven and replacing three by nine in the displayed congruences.
+
+\section{Other formulas in the same entries}
+
+Let $a_n=\coef nA$. Extracting even and odd coefficients from
+\eqref{eq:A} gives exactly A389475, Formulas (3.a)--(3.b):
+\begin{align*}
+ \coef{2n+1}{A^2}&=2\coef{2n+1}{A^3} &&(n\geq1),\\
+ \coef{2n}{A^2}&=3^n a_n+2\coef{2n}{A^3} &&(n\geq2).
+\end{align*}
+If $S$ is the compositional inverse of $A$, substitution of $x=S(y)$
+in \eqref{eq:A} proves A389475, Formula (2).
+The inverse exists integrally: in $A(S)=x$ the coefficient of $x^n$
+is $\coef nS$ plus an integer expression in earlier coefficients.
+This recursion constructs the inverse; its leading coefficient one also
+gives the two-sided inverse by uniqueness of composition with a series
+of order one. The same argument for the inverse $R$ of $B$, first in
+\eqref{eq:B} and then with $x=R(y)$, proves
+\[
+ B\bigl(2y^2+R(y)^2+2R(y)^3\bigr)=3y^2,\qquad
+ R(3y^2)=2y^2+R(y)^2+2R(y)^3.
+\]
+These are A389474, Formula (2) and its displayed reversion identity.
+
+For A273095 let $F$ be the integral solution of \eqref{eq:family} with
+$(q,c)=(1,-2)$, let $G$ be its inverse, and put $P(y)=y^2-2y^3$.
+Then $F(x^2)=P(F(x))$. Substituting $x=G(y)$ gives
+$F(G(y)^2)=P(y)$, and induction gives
+$F(G(y)^{2^j})=P^{\circ j}(y)$ for all $j\geq0$, the iterate identities
+in that entry. Its asymptotic formula is a separate analytic statement.
+
+The Catalan comparison in A389474 also follows formally. If
+$C=x+O(x^2)$ satisfies $C=x+C^2$ and $y=x^2+2xC(x)^2$, then
+$y=C(x)^2-C(x)^4$. The normalized solution of $U=y+U^2$ is unique
+by its coefficient recursion, so $C(y)=C(x)^2$.
+
+\section{A389472: a separate residue descent}
+
+Hanna's A389472 COMMENTS \cite{hanna472} conjecture
+$d_{2n-1}\equiv0\pmod2$ and $d_{3n-1}\equiv0\pmod3$ for $n>1$.
+Perez Fontelles \cite[Section 4]{perez} proved the parity statement on
+August 31, 2026. Dong \cite[Section 3, Theorem 4]{dong} proved the
+modulo-three statement in a version released on September 26, 2026;
+his November 7 version retains it. The following gives alternative
+binomial-descent proofs of those results.
+Here $D=\sum_{m\geq1}d_mx^m$ satisfies
+\[
+ D(x^2+x^3)=x^2(1+D(x)),\qquad d_1=d_2=1.
+\]
+The second seed is part of the displayed sequence; the equation and
+$d_1=1$ alone do not determine it.
+For $m\geq3$, coefficient extraction gives the integral recursion
+\begin{equation}\label{eq:recurrence}
+ d_m=\sum_{k=\lceil(m+2)/3\rceil}^{\lfloor(m+2)/2\rfloor}
+       d_k\binom{k}{m+2-2k}.
+\end{equation}
+Every index $k$ on the right is smaller than $m$, proving existence and
+uniqueness for these seeds and integrality. The coefficients below degree
+five in the defining equation agree directly.
+
+For completeness, in $\Fp_p[t]$ the equality
+$(1+t)^k=(1+t)^{k_0}(1+t^p)^{\lfloor k/p\rfloor}$, where
+$k_0\equiv k\pmod p$ and $0\leq k_0<p$, shows that
+\begin{equation}\label{eq:lucas}
+ j\bmod p>k\bmod p\quad\Longrightarrow\quad
+ \binom{k}{j}\equiv0\pmod p.
+\end{equation}
+For odd $m\geq3$, put $j=m+2-2k$ in \eqref{eq:recurrence}.
+Then $j$ is odd. If $k$ is even, \eqref{eq:lucas} with $p=2$
+kills the term. If $k$ is odd, either $k\geq3$ and induction kills
+$d_k$, or $k=1$, which is outside the sum since $m+2>3$.
+This proves the parity conjecture.
+
+For $m\equiv2\pmod3$ and $m\geq5$, we have $j+2k\equiv1\pmod3$.
+If $k\equiv0,1\pmod3$, respectively, then $j\equiv1,2\pmod3$,
+so \eqref{eq:lucas} kills the term. If $k\equiv2\pmod3$, either
+$k\geq5$ and induction kills $d_k$, or $k=2$, for which $j=m-2>2$
+and the binomial coefficient vanishes. Thus $3\mid d_{3n-1}$ for
+every $n>1$. The value $d_5=6$ rules out replacing three by nine.
+
+\section{The companion product and the convergence radius}
+
+Set $h(x)=x^2+x^3$ and $u_j=h^{\circ j}(x)$, where $u_0=x$.
+The product
+\[
+ E(x)=x\prod_{j\geq0}(1+u_j)
+\]
+is a well-defined integral formal series: $u_j$ has order $2^j$, so
+each coefficient uses finitely many factors. It is Hanna's product
+in A350432, Formula (3) \cite{hanna432}: its factors $F_{j+1}=1+u_j$
+satisfy $F_{j+2}=1+(F_{j+1}-1)^2F_{j+1}$.
+
+\begin{corollary}[A389472 and A350432]\label{cor:product}
+The series $E$ is the unique normalized solution of $E(h(x))=xE(x)$.
+Every rational solution $D=x+O(x^2)$ of
+$D(h)=x^2(1+D)$ is
+\[
+ D=x+tE^2,\qquad t=[x^2]D.
+\]
+In particular A389472, with $t=1$, satisfies $D=x+E^2$.
+Both $E$ and that $D$ have radius of convergence
+$r=(\sqrt5-1)/2$, as asserted in the COMMENTS of A350432 and A389472.
+For arbitrary integer $t$, the same formula gives an integral solution
+and both residue congruences above; for $t\ne0$ its radius is also $r$.
+\end{corollary}
+\begin{proof}
+Shifting the product index gives
+$E(h)=h\prod_{j\geq1}(1+u_j)=xE(x)$.
+Consequently $x+tE^2$ satisfies the equation for $D$ and has second
+coefficient $t$. The recurrence \eqref{eq:recurrence}, now with
+$d_2=t$, proves uniqueness for $D$; the coefficient of degree $m+1$
+in $E(h)=xE$ similarly determines $[x^m]E$ from earlier terms for
+$m\geq2$. The residue-descent proof applies with $d_2=t$ as well:
+its only possible exceptional term $k=2$ still has zero binomial
+coefficient when $m\geq5$. Parity also follows directly from
+$D\equiv x+tE(x^2)\pmod2$.
+
+For $0<s<r$, let $v_j=h^{\circ j}(s)$ and
+$\rho=s(1+s)<1$. Then $v_{j+1}\leq\rho v_j$, and for $|x|\leq s$
+we have $|u_j(x)|\leq v_j\leq s\rho^j$. Hence the product converges
+uniformly on each such disk and defines an analytic function there.
+All coefficients of $E$ are nonnegative and its linear coefficient is one.
+If its radius exceeded $r$, evaluation of $E(h)=xE$ at $h(r)=r$
+would give $E(r)=rE(r)$ with $E(r)\geq r>0$, a contradiction.
+For $K=(E/x)^2$ the equation is $K=(1+x)^2K(h)$, with nonnegative
+coefficients and $K(0)=1$; the identical argument at $r$ shows that
+$K$, and therefore $x+tE^2$ for $t\ne0$, cannot have larger radius.
+\end{proof}
+
+The product also gives rational error bounds for the values in A389472.
+For rational $0<s<r$, put
+$P_N=\prod_{0\leq j<N}(1+v_j)^2$ and
+$T_N=2v_N/(1-v_N(1+v_N))$. Once $T_N<1$,
+\[
+ s+s^2P_N\ \leq\ D(s)\ \leq\ s+\frac{s^2P_N}{1-T_N}.
+\]
+Indeed $\sum_{j\geq N}v_j\leq v_N/(1-v_N(1+v_N))$ and
+$\log(1+v_j)\leq v_j$, while $e^t\leq(1-t)^{-1}$ for $0\leq t<1$.
+The accompanying exact calculations confirm the displayed prefixes at
+$s=1/2,2/5,1/3,1/4,1/5$.
+
+The remaining algebraic formulas in A389472 also follow explicitly:
+substituting its inverse $J$ in $D(h)=x^2(1+D)$ proves Formula (2);
+iterating once gives
+$D(h^{\circ2})=h^2(1+x^2+x^2D)$, which after division by $x^2h^2$
+is exactly Formula (3). These divisions are identities in formal Laurent
+series whose displayed differences are ordinary power series.
+For A350432, applying the inverse of $E$ to $E(h)=xE$ proves
+Formula (2), and the product above proves Formula (3).
+
+\begin{samepage}
+\begin{corollary}[Related product entries]\label{cor:products}
+For $m\geq2$ and $\epsilon\in\Z$, put
+$h_{m,\epsilon}(x)=x^m(1+\epsilon x)$. Then
+\[
+ E_{m,\epsilon}(x)=x\prod_{j\geq0}
+       \bigl(1+\epsilon h_{m,\epsilon}^{\circ j}(x)\bigr)
+\]
+is the unique normalized rational solution of
+$E_{m,\epsilon}(h_{m,\epsilon})=x^{m-1}E_{m,\epsilon}$, and it and
+its compositional inverse $J_{m,\epsilon}$ are integral.
+Thus $J_{m,\epsilon}(x^{m-1}E_{m,\epsilon})=h_{m,\epsilon}$.
+\end{corollary}
+\end{samepage}
+\begin{proof}
+The factors stabilize coefficientwise because the $j$th iterate has order
+$m^j$. Shifting factors proves the equation. Its coefficient of degree
+$n+m-1$ determines $[x^n]E_{m,\epsilon}$ from earlier coefficients
+for $n\geq2$, since $(n+m-1)/m<n$. Inversion is integral by the same
+triangular recursion used above.
+\end{proof}
+
+These formulas prove the defining and product identities of A350431
+($J_{2,1}$), A350433 ($E_{3,-1}$), and A350434 ($J_{4,-1}$)
+\cite{related}. They also distinguish a local transcription discrepancy
+in A273162 \cite{related}: its FORMULA assigns the product $E_{2,-1}$
+to $A$, whereas its EXAMPLE and generating code assign it to the inverse
+$B$. The latter is correct: $E_{2,-1}=x-x^2+O(x^3)$ but
+$A=J_{2,-1}=x+x^2+O(x^3)$. Thus the corrected formula is
+$B=E_{2,-1}$, equivalently $A=J_{2,-1}$.
+Its other displayed identity follows by substituting $x=A(y)$ in
+$A(xB(x))=x^2-x^3$, giving $A(yA(y))=A(y)^2-A(y)^3$.
+
+\section{Coverage and verification scope}
+
+\noindent
+\begin{longtable}{@{}p{.35\textwidth}p{.60\textwidth}@{}}
+\toprule
+Source item & Mathematical coverage\\
+\midrule
+\endhead
+A389475 (4.a), (4.b) & Proved, Theorem~\ref{thm:main}; every coefficient,
+including degree zero.\\
+A389475 (2), (3.a), (3.b) & Proved by substitution and coefficient extraction.\\
+A389474 (3), (4) & Proved; the modulo-nine identity also retains degrees
+two and three exactly.\\
+A389474 (2), reversion, Catalan comment & Proved by substitution and the
+normalized Catalan equation.\\
+A389472 parity COMMENTS conjecture & Reproved; prior proof Perez
+Fontelles (August 31, 2026), Section 4.\\
+A389472 modulo-three COMMENTS conjecture & Reproved; prior proof Dong
+(September 26, 2026), Section 3, Theorem 4.\\
+A389472 radius COMMENT; Formulas (2), (3) & Proved by
+Corollary~\ref{cor:product} and the displayed substitutions.\\
+A389472 rational numerical values & Displayed prefixes at $1/2$, $2/5$,
+$1/3$, $1/4$, $1/5$ have finite rational bounds; other numerical values
+are not covered.\\
+A350432 Formulas (1)--(3), radius COMMENT & Proved; Hanna's stated product
+formula is cited, not presented as a new identity.\\
+A350431, A350433, A350434 defining and product formulas & Proved by
+Corollary~\ref{cor:products}; numerical values of A350433 are not covered.\\
+A273162 FORMULA product & Refuted-and-corrected: the product gives $B$,
+not $A$, as its own EXAMPLE states; the defining identities are proved.\\
+A273095 defining equation and iterates & Proved via \eqref{eq:family} and
+iteration; the asymptotic formula is not covered.\\
+A273320, A274396 defining, inverse and iterate identities & Proved by
+Corollary~\ref{cor:prime} and substitution.\\
+Numerical values of A389474 & Not covered; the arguments are formal.\\
+Odd-$q$, even-$c$ square-modulus family; free-$t$ classification & Not posed;
+proved in Corollaries~\ref{cor:parameter} and~\ref{cor:product}.\\
+\bottomrule
+\end{longtable}
+
+\medskip
+The pinned Lean file
+\href{https://github.com/the-omega-institute/trureturing/blob/074df09ddbbef1843ddb383577bfaa827f753e36/D5/S1/Recurrence/Invariants/HannaTripleSquareFrobeniusModThree.lean}{triple-substitution Lean source}
+contains the declarations \texttt{result} for A389475 (4.a),
+\texttt{FormulaFourB.resultFourB} for (4.b), and
+\texttt{integral\_frobenius} for \eqref{eq:allpowers} at every
+natural coefficient index and exponent.
+The definitions include normalized rational existence and, for each
+coefficient difference, equality to $3z$ for an integer $z$.
+
+The pinned file
+\href{https://github.com/the-omega-institute/trureturing/blob/074df09ddbbef1843ddb383577bfaa827f753e36/D5/S1/Recurrence/Invariants/HannaCompositionSquareModNine.lean}{composition Lean source}
+contains \texttt{result} for A389474 (3) at $n>3$ and
+\texttt{FormulaFour.resultFour} for (4) at $n,k\geq1$.
+Its declaration \texttt{integral\_mod\_nine} expresses the full
+identity $B^2-(x^2+2x^3)=9Q$ for an integral $Q$.
+The pinned file
+\href{https://github.com/the-omega-institute/trureturing/blob/074df09ddbbef1843ddb383577bfaa827f753e36/D5/S1/Recurrence/Parity/SquareCubeSubstitutionThreeIndexModThree.lean}{residue-descent Lean source}
+contains \texttt{result} for $3\mid d_{3n-1}$ with $n>1$, using the
+integer recurrence with $d_2=1$.
+The pinned
+\href{https://github.com/the-omega-institute/trureturing/blob/074df09ddbbef1843ddb383577bfaa827f753e36/D5/S1/Recurrence/Parity/SquareCubeSubstitutionOddIndexParity.lean}{parity Lean source}
+contains \texttt{hanna\_conjecture} for $2\mid d_{2n-1}$, $n>1$;
+\texttt{generating\_equation} and \texttt{generating\_unique} identify the
+recurrence with the integer solution having $d_1=d_2=1$.
+The parameter family, inverse identities, Catalan comparison,
+prime-degree and signed families, companion products, free-$t$
+classification and analytic radius
+have written proofs above. The accompanying \texttt{verify.py}
+checks exact coefficients through degree 96; these finite checks are
+separate from the all-indices proofs.
+
+\begin{thebibliography}{10}
+\bibitem{hanna475}
+Paul D. Hanna, \emph{A389475}, The On-Line Encyclopedia of Integer
+Sequences (2025), Formulas (1)--(4.b),
+\url{https://oeis.org/A389475}.
+\bibitem{hanna474}
+Paul D. Hanna, \emph{A389474}, The On-Line Encyclopedia of Integer
+Sequences (2025), Formulas (1)--(4),
+\url{https://oeis.org/A389474}.
+\bibitem{hanna472}
+Paul D. Hanna, \emph{A389472}, The On-Line Encyclopedia of Integer
+Sequences (2025), COMMENTS and defining equation,
+\url{https://oeis.org/A389472}.
+\bibitem{hanna095}
+Paul D. Hanna, \emph{A273095}, The On-Line Encyclopedia of Integer
+Sequences (2016), defining equation and iterate identities,
+\url{https://oeis.org/A273095}.
+\bibitem{hanna432}
+Paul D. Hanna, \emph{A350432}, The On-Line Encyclopedia of Integer
+Sequences (2021), Formulas (1)--(3); radius comment, January 26, 2024,
+\url{https://oeis.org/A350432}.
+\bibitem{related}
+Paul D. Hanna, \emph{A350431}, \emph{A350433}, \emph{A350434} (2021),
+and \emph{A273162} (2016; product formula added December 30, 2021),
+The On-Line Encyclopedia of Integer Sequences,
+\url{https://oeis.org/A350431}, \url{https://oeis.org/A350433},
+\url{https://oeis.org/A350434}, \url{https://oeis.org/A273162}.
+\bibitem{primeentries}
+Paul D. Hanna, \emph{A273320} (May 19, 2016) and \emph{A274396}
+(July 14, 2016), The On-Line Encyclopedia of Integer Sequences,
+\url{https://oeis.org/A273320}, \url{https://oeis.org/A274396}.
+\bibitem{perez}
+Adrian Perez Fontelles, \emph{Every odd-indexed term of OEIS A389472
+after the first is even}, August 31, 2026, Section 4,
+\href{https://github.com/astrafala/Conjectures/blob/58cf4596af4541652fb191e177ef9b7771388d53/paper-sources/01001-01500/01042-PROOF.tex}{paper 1042, pinned source}.
+\bibitem{dong}
+Horace Dong, \emph{Proofs of eleven congruence conjectures of Hanna
+from the OEIS, and the resolution of three more}, September 26, 2026,
+Section 3, Theorem 4; version 2, November 7, 2026,
+\href{https://github.com/Horace-Maxwell/ai4math-results/blob/537ae6c44a450566edd06fda208de775ec7d7c9c/papers/oeis-hanna/note.tex}{first-version source},
+\href{https://github.com/Horace-Maxwell/ai4math-results/blob/a104be9c0d4aaeeea65f6f62fed064525180a939/papers/oeis-hanna/note.pdf}{version 2}.
+\bibitem{stacks}
+The Stacks Project Authors, \emph{The Stacks Project}, Section 33.36,
+``Frobenii,'' tag 0CC6, the ring endomorphism following Definition 33.36.1,
+\url{https://stacks.math.columbia.edu/tag/0CC6} (accessed November 11, 2026).
+\end{thebibliography}
+
+\noindent\small
+\copyright\ 2026 Haobo Ma and Wenlin Zhang.
+Licensed under Creative Commons Attribution 4.0 International (CC BY 4.0),
+\url{https://creativecommons.org/licenses/by/4.0/}.
+\end{document}

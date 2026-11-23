@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this work, cite it."
+title: "Integral lifting and extensions for Hanna's OEIS A389475, Formulas (4.a)–(4.b): complements to Perez Fontelles (2026) and Dong (2026)"
+authors:
+  - name: "Haobo Ma"
+  - name: "Wenlin Zhang"
+date-released: "2026-11-23"
+version: "2"
+url: "https://mathesis-omega-research.apps.chrono-ai.fun/papers/hanna-a389475-integral-lifting-congruences?version=2"
+license: "CC-BY-4.0"

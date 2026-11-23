@@ -1,0 +1,256 @@
+{
+  "nodes": [
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s1",
+      "contributor": null,
+      "identity": "collected:hanna-a389475-integral-lifting-congruences:2:s1",
+      "kind": "paper",
+      "label": "Theorem",
+      "lean_source": {
+        "revision": "074df09ddbbef1843ddb383577bfaa827f753e36",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/074df09ddbbef1843ddb383577bfaa827f753e36/D5/S1/Recurrence/Invariants/HannaTripleSquareFrobeniusModThree.lean"
+      },
+      "lineage": "collected:hanna-a389475-integral-lifting-congruences:s1",
+      "macros": {
+        "\\Fp": "\\mathbb F",
+        "\\Q": "\\mathbb Q",
+        "\\Z": "\\mathbb Z",
+        "\\coef": "[x^{#1}]#2"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "hanna-a389475-integral-lifting-congruences",
+      "scope": "in_scope",
+      "statement": "Each of \\eqref{eq:A} and \\eqref{eq:B} has exactly one solution in\n$x+x^2\\Q[[x]]$, and both solutions belong to $\\Z[[x]]$.\nThey satisfy\n\\begin{align}\n A(x)^3&\\equiv A(x^3)\\pmod3, \\\\\n A(x)^2&\\equiv x^2+2A(x^3)\\pmod3, \\\\\n B(x)^2&\\equiv x^2+2x^3\\pmod9. \n\\end{align}\nMoreover, for every $f\\in\\Z[[x]]$ and every integer $k\\geq0$,\n\\begin{equation}\n f(x)^{3k}\\equiv f(x^3)^k\\pmod3.\n\\end{equation}\nIn particular, \\eqref{eq:mod9} proves A389474, Formula (3), at every\ndegree $n>3$, and \\eqref{eq:allpowers} with $f=B$ proves its Formula (4)\nfor all $n,k\\geq1$.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Integral lifting and extensions for Hanna's OEIS A389475, Formulas (4.a)–(4.b): complements to Perez Fontelles (2026) and Dong (2026)",
+      "toolchain": null,
+      "version": 2,
+      "work": "hanna-a389475-integral-lifting-congruences"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s2",
+      "contributor": null,
+      "identity": "collected:hanna-a389475-integral-lifting-congruences:2:s2",
+      "kind": "paper",
+      "label": "Lemma",
+      "lean_source": {
+        "revision": "074df09ddbbef1843ddb383577bfaa827f753e36",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/074df09ddbbef1843ddb383577bfaa827f753e36/D5/S1/Recurrence/Invariants/HannaTripleSquareFrobeniusModThree.lean"
+      },
+      "lineage": "collected:hanna-a389475-integral-lifting-congruences:s2",
+      "macros": {
+        "\\Fp": "\\mathbb F",
+        "\\Q": "\\mathbb Q",
+        "\\Z": "\\mathbb Z",
+        "\\coef": "[x^{#1}]#2"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "hanna-a389475-integral-lifting-congruences",
+      "scope": "in_scope",
+      "statement": "For either residual $E\\in\\{E_A,E_B\\}$, the equation $E(f)=0$ has a\nunique normalized rational solution, and that solution is integral.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Integral lifting and extensions for Hanna's OEIS A389475, Formulas (4.a)–(4.b): complements to Perez Fontelles (2026) and Dong (2026)",
+      "toolchain": null,
+      "version": 2,
+      "work": "hanna-a389475-integral-lifting-congruences"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s3",
+      "contributor": null,
+      "identity": "collected:hanna-a389475-integral-lifting-congruences:2:s3",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "074df09ddbbef1843ddb383577bfaa827f753e36",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/074df09ddbbef1843ddb383577bfaa827f753e36/D5/S1/Recurrence/Invariants/HannaTripleSquareFrobeniusModThree.lean"
+      },
+      "lineage": "collected:hanna-a389475-integral-lifting-congruences:s3",
+      "macros": {
+        "\\Fp": "\\mathbb F",
+        "\\Q": "\\mathbb Q",
+        "\\Z": "\\mathbb Z",
+        "\\coef": "[x^{#1}]#2"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "hanna-a389475-integral-lifting-congruences",
+      "scope": "in_scope",
+      "statement": "Let $q$ be odd, let $c$ be even, and let $f$ be the normalized solution\nof \\eqref{eq:family}. Its compositional inverse $g$ is integral and satisfies\n\\[\n g\\bigl(x^2+cx^3+(q-1)g(x)^2\\bigr)=qg(x)^2,\n \\qquad g(x)^2\\equiv x^2+cx^3\\pmod{q^2}.\n\\]\nFor $c=2$ the coefficient of $x^4$ in the difference is exactly $q^2$.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Integral lifting and extensions for Hanna's OEIS A389475, Formulas (4.a)–(4.b): complements to Perez Fontelles (2026) and Dong (2026)",
+      "toolchain": null,
+      "version": 2,
+      "work": "hanna-a389475-integral-lifting-congruences"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s4",
+      "contributor": null,
+      "identity": "collected:hanna-a389475-integral-lifting-congruences:2:s4",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "074df09ddbbef1843ddb383577bfaa827f753e36",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/074df09ddbbef1843ddb383577bfaa827f753e36/D5/S1/Recurrence/Invariants/HannaTripleSquareFrobeniusModThree.lean"
+      },
+      "lineage": "collected:hanna-a389475-integral-lifting-congruences:s4",
+      "macros": {
+        "\\Fp": "\\mathbb F",
+        "\\Q": "\\mathbb Q",
+        "\\Z": "\\mathbb Z",
+        "\\coef": "[x^{#1}]#2"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "hanna-a389475-integral-lifting-congruences",
+      "scope": "in_scope",
+      "statement": "For any prime $p$, integers $q\\equiv1\\pmod p$ and $c\\equiv0\\pmod p$,\nthe equation\n\\[\n f(qx^p)=(q-1)x^p+f^p+cf^{p+1},\\qquad f=x+O(x^2),\n\\]\nhas a unique rational solution and it is integral.\nIn addition, both equations\n$\\sigma f(\\sigma x^2)=f^2-2f^3$ for $\\sigma\\in\\{1,-1\\}$\nhave unique normalized integral solutions.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Integral lifting and extensions for Hanna's OEIS A389475, Formulas (4.a)–(4.b): complements to Perez Fontelles (2026) and Dong (2026)",
+      "toolchain": null,
+      "version": 2,
+      "work": "hanna-a389475-integral-lifting-congruences"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s5",
+      "contributor": null,
+      "identity": "collected:hanna-a389475-integral-lifting-congruences:2:s5",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "074df09ddbbef1843ddb383577bfaa827f753e36",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/074df09ddbbef1843ddb383577bfaa827f753e36/D5/S1/Recurrence/Invariants/HannaTripleSquareFrobeniusModThree.lean"
+      },
+      "lineage": "collected:hanna-a389475-integral-lifting-congruences:s5",
+      "macros": {
+        "\\Fp": "\\mathbb F",
+        "\\Q": "\\mathbb Q",
+        "\\Z": "\\mathbb Z",
+        "\\coef": "[x^{#1}]#2"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "hanna-a389475-integral-lifting-congruences",
+      "scope": "in_scope",
+      "statement": "The series $E$ is the unique normalized solution of $E(h(x))=xE(x)$.\nEvery rational solution $D=x+O(x^2)$ of\n$D(h)=x^2(1+D)$ is\n\\[\n D=x+tE^2,\\qquad t=[x^2]D.\n\\]\nIn particular A389472, with $t=1$, satisfies $D=x+E^2$.\nBoth $E$ and that $D$ have radius of convergence\n$r=(\\sqrt5-1)/2$, as asserted in the COMMENTS of A350432 and A389472.\nFor arbitrary integer $t$, the same formula gives an integral solution\nand both residue congruences above; for $t\\ne0$ its radius is also $r$.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Integral lifting and extensions for Hanna's OEIS A389475, Formulas (4.a)–(4.b): complements to Perez Fontelles (2026) and Dong (2026)",
+      "toolchain": null,
+      "version": 2,
+      "work": "hanna-a389475-integral-lifting-congruences"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s6",
+      "contributor": null,
+      "identity": "collected:hanna-a389475-integral-lifting-congruences:2:s6",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "074df09ddbbef1843ddb383577bfaa827f753e36",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/074df09ddbbef1843ddb383577bfaa827f753e36/D5/S1/Recurrence/Invariants/HannaTripleSquareFrobeniusModThree.lean"
+      },
+      "lineage": "collected:hanna-a389475-integral-lifting-congruences:s6",
+      "macros": {
+        "\\Fp": "\\mathbb F",
+        "\\Q": "\\mathbb Q",
+        "\\Z": "\\mathbb Z",
+        "\\coef": "[x^{#1}]#2"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "hanna-a389475-integral-lifting-congruences",
+      "scope": "in_scope",
+      "statement": "For $m\\geq2$ and $\\epsilon\\in\\Z$, put\n$h_{m,\\epsilon}(x)=x^m(1+\\epsilon x)$. Then\n\\[\n E_{m,\\epsilon}(x)=x\\prod_{j\\geq0}\n       \\bigl(1+\\epsilon h_{m,\\epsilon}^{\\circ j}(x)\\bigr)\n\\]\nis the unique normalized rational solution of\n$E_{m,\\epsilon}(h_{m,\\epsilon})=x^{m-1}E_{m,\\epsilon}$, and it and\nits compositional inverse $J_{m,\\epsilon}$ are integral.\nThus $J_{m,\\epsilon}(x^{m-1}E_{m,\\epsilon})=h_{m,\\epsilon}$.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Integral lifting and extensions for Hanna's OEIS A389475, Formulas (4.a)–(4.b): complements to Perez Fontelles (2026) and Dong (2026)",
+      "toolchain": null,
+      "version": 2,
+      "work": "hanna-a389475-integral-lifting-congruences"
+    }
+  ]
+}

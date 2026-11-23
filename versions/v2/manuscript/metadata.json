@@ -1,0 +1,22 @@
+{
+  "id": "hanna-a389475-integral-lifting-congruences",
+  "revision": 2,
+  "problem_ids": [
+    "h3894-triple-square-frobenius-mod-three",
+    "h3894-a389475-formula-four-b",
+    "h3894-congruences",
+    "h3894-a389474-formula-four",
+    "h3894-square-cube-three-index",
+    "oeis-a389472-square-cube-substitution-odd-index-parity"
+  ],
+  "topic": "Integral normalized power series and Hanna's coefficientwise congruences",
+  "title": "Integral lifting and extensions for Hanna's OEIS A389475, Formulas (4.a)–(4.b): complements to Perez Fontelles (2026) and Dong (2026)",
+  "creators": [
+    {"name": "Ma, Haobo", "affiliation": "ChronoAI Pte Ltd, Singapore"},
+    {"name": "Zhang, Wenlin", "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore"}
+  ],
+  "abstract": "For Hanna's OEIS A389475, Formulas (4.a)–(4.b), we give integral lifting proofs and parameter extensions, together with alternative proofs of the A389472 congruences proved by Perez Fontelles (2026) and Dong (2026). The normalized rational series satisfying A(3x^2)=2x^2+A(x)^2−2A(x)^3 has integral coefficients and satisfies A(x)^3≡A(x^3) and A(x)^2≡x^2+2A(x^3) modulo three. A coefficient recursion with diagonal −2 has even numerators by characteristic-two Frobenius. The same lifting proves A389474, Formulas (3)–(4), including B(x)^2≡x^2+2x^3 modulo nine. Binomial descent reproves both A389472 congruences. An integral product links A389472 to A350432, classifies the free second coefficient, and proves the stated golden-ratio convergence radius.",
+  "summary": "Integral proofs of A389475 (4.a)–(4.b) and A389474 (3)–(4); alternative proofs crediting Perez Fontelles and Dong for the A389472 congruences; square-modulus and companion-product families, a convergence-radius proof, the product/inverse distinction already present in A273162's examples, and exact finite coefficient and rational-value certificates.",
+  "license": "cc-by-4.0",
+  "evidence_url": "https://github.com/the-omega-institute/trureturing/blob/074df09ddbbef1843ddb383577bfaa827f753e36/D5/S1/Recurrence/Invariants/HannaTripleSquareFrobeniusModThree.lean"
+}
