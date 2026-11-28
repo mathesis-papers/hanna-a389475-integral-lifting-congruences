@@ -31,6 +31,7 @@
     "concept_doi": "10.5281/zenodo.24409468",
     "current_version": 2,
     "doi": "10.5281/zenodo.24409469",
+    "kind": "note",
     "lean_source": {
       "revision": "074df09ddbbef1843ddb383577bfaa827f753e36",
       "url": "https://github.com/the-omega-institute/trureturing/blob/074df09ddbbef1843ddb383577bfaa827f753e36/D5/S1/Recurrence/Invariants/HannaTripleSquareFrobeniusModThree.lean"
@@ -55,10 +56,12 @@
     "title": "Integral lifting and extensions for Hanna's OEIS A389475, Formulas (4.a)–(4.b): complements to Perez Fontelles (2026) and Dong (2026)",
     "versions": [
       {
+        "changelog": null,
         "previous_version": null,
         "published_on": "2026-11-23T01:43:15.243850406Z",
         "revision": "2",
-        "version": 2
+        "version": 2,
+        "version_label": null
       }
     ],
     "work": "hanna-a389475-integral-lifting-congruences"
